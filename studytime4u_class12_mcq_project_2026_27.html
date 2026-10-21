@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Class XII Computer Science Project Report — MCQ Exam Software | StudyTime4U</title>
+<meta name="description" content="Editable and printable CBSE Class XII Computer Science project report template for an MCQ-based exam software using Python and CSV file handling.">
+<style>
+:root{--ink:#172033;--blue:#174a82;--pale:#eef4fb;--line:#b8c4d3;--muted:#536174}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#edf1f6;color:var(--ink);font:16px/1.55 Arial,Helvetica,sans-serif}
+.toolbar{position:sticky;top:0;z-index:10;background:#142d4e;color:#fff;padding:10px 16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+button{border:0;border-radius:6px;padding:10px 15px;font-weight:700;cursor:pointer}
+.toolbar button{background:#fff;color:#17385f}
+.toolbar .primary{background:#cfe3ff}
+.wrap{max-width:900px;margin:22px auto;padding:0 14px}
+.page{background:white;max-width:850px;margin:0 auto 20px;padding:50px 58px;box-shadow:0 2px 12px #17203318;min-height:950px;position:relative}
+h1,h2,h3,h4{color:var(--blue);line-height:1.25}
+h1{font-size:30px} h2{font-size:23px;border-bottom:2px solid #d9e5f3;padding-bottom:8px;margin-top:0}
+h3{font-size:18px;margin-top:24px}
+p{margin:9px 0} li{margin:5px 0}
+.small{font-size:13px;color:var(--muted)}
+.center{text-align:center}
+.cover{display:flex;flex-direction:column;justify-content:space-between;text-align:center;min-height:840px;border:3px double var(--blue);padding:30px}
+.logo{width:85px;height:85px;border:2px solid var(--blue);border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;color:var(--blue);font-weight:bold;font-size:22px}
+.cover-title{font-size:31px;font-weight:800;letter-spacing:.4px;color:var(--blue);margin:18px 0}
+.cover-sub{font-size:21px;font-weight:bold}
+.field{display:inline-block;min-width:220px;border-bottom:1px solid #222;min-height:23px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 24px;text-align:left;margin-top:30px}
+.form-item{border-bottom:1px solid #333;padding:8px 0}
+.form-item b{display:block;font-size:13px;color:var(--muted);font-weight:600}
+.callout{border-left:4px solid var(--blue);background:var(--pale);padding:12px 15px;margin:15px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+th,td{border:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}
+th{background:var(--pale)}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f7fa;border:1px solid #d6dee8;padding:14px;font:12px/1.45 Consolas,Monaco,monospace;color:#182638}
+code{font-family:Consolas,Monaco,monospace}
+.page-no{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#667085;font-size:12px}
+.toc li{margin:8px 0}
+.signature-row{display:grid;grid-template-columns:1fr 1fr;gap:35px;margin-top:60px}
+.signature{border-top:1px solid #333;padding-top:7px;margin-top:40px}
+.blank{display:inline-block;min-width:180px;border-bottom:1px solid #333;height:20px}
+.diagram{border:1px solid var(--line);padding:18px;text-align:center;background:#fbfcfe;margin:15px 0}
+.diagram .node{display:inline-block;border:1px solid var(--blue);border-radius:7px;background:#fff;padding:9px 14px;margin:4px}
+.notice{font-size:13px;color:#4c5b6d}
+a{color:#145fa5;overflow-wrap:anywhere}
+@page{size:A4;margin:16mm 15mm}
+@media print{
+ body{background:#fff;font-size:11pt}
+ .toolbar{display:none!important}
+ .wrap{max-width:none;margin:0;padding:0}
+ .page{box-shadow:none;margin:0;max-width:none;min-height:0;padding:0;border:0;page-break-after:always;break-after:page}
+ .page:last-child{page-break-after:auto;break-after:auto}
+ .cover{min-height:255mm;padding:18mm 12mm;border:3px double var(--blue)}
+ h1{font-size:25pt} h2{font-size:17pt} h3{font-size:13pt}
+ pre{font-size:8pt;line-height:1.3;page-break-inside:auto}
+ tr,li{page-break-inside:avoid}
+ a{color:inherit;text-decoration:none}
+ .page-no{display:none}
+}
+@media(max-width:650px){.page{padding:25px 20px;min-height:0}.form-grid,.signature-row{grid-template-columns:1fr}.cover{min-height:750px}.cover-title{font-size:25px}h1{font-size:26px}}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <button class="primary" onclick="window.print()">Print / Save as PDF</button>
+  <button onclick="document.querySelectorAll('[contenteditable=true]').forEach(e=>e.focus())">Edit text fields</button>
+  <button onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top</button>
+</div>
+<div class="wrap">
+
+<section class="page">
+ <div class="cover">
+  <div>
+   <div class="logo">ST4U</div>
+   <div style="font-weight:700;letter-spacing:1px;color:#174a82">STUDYTIME4U.ORG</div>
+   <p class="small">Learn Today, Lead Tomorrow</p>
+   <hr style="border:0;border-top:1px solid #9aabc0;margin:24px 0">
+   <p style="font-weight:700;letter-spacing:1px">COMPUTER SCIENCE PROJECT REPORT</p>
+   <div class="cover-title">MCQ-BASED EXAMINATION SOFTWARE</div>
+   <div class="cover-sub">Class XII · Computer Science (083)</div>
+   <p>Academic Session 2026–2027</p>
+   <p class="notice">A Python-based quiz application with score calculation and CSV result storage</p>
+  </div>
+  <div class="form-grid">
+   <div class="form-item"><b>Submitted by (Student Name)</b><span contenteditable="true">[Enter student name]</span></div>
+   <div class="form-item"><b>Class / Section</b><span contenteditable="true">XII / [Section]</span></div>
+   <div class="form-item"><b>Roll Number</b><span contenteditable="true">[Enter roll number]</span></div>
+   <div class="form-item"><b>School Name</b><span contenteditable="true">[Enter school name]</span></div>
+   <div class="form-item"><b>Submitted to (Computer Science Teacher)</b><span contenteditable="true">[Teacher name]</span></div>
+   <div class="form-item"><b>School Affiliation Number (if required)</b><span contenteditable="true">[Enter if applicable]</span></div>
+  </div>
+  <div>
+   <p><b>Submitted in partial fulfilment of the practical/project work requirements</b></p>
+   <p>Central Board of Secondary Education (CBSE)</p>
+   <p class="small">This is an editable template. Replace every bracketed field, test the program yourself, and follow your school teacher's instructions before final submission.</p>
+  </div>
+ </div>
+</section>
+
+<section class="page">
+<h2>Certificate</h2>
+<p>This is to certify that <span class="blank"></span>, a student of Class XII, Section <span class="blank"></span>, Roll No. <span class="blank"></span>, of <span class="blank"></span> (School Name), has completed the Computer Science project entitled <b>“MCQ-Based Examination Software”</b> during the academic session 2026–2027.</p>
+<p>The project has been developed using Python programming and CSV file handling. The work is submitted for assessment as part of the Class XII Computer Science practical/project work. The student has demonstrated the project and explained its logic, design, testing, and limitations to the best of their ability.</p>
+<div class="signature-row">
+<div><div class="signature">Computer Science Teacher</div><p>Date: <span class="blank"></span></p></div>
+<div><div class="signature">External Examiner (if applicable)</div><p>Date: <span class="blank"></span></p></div>
+</div>
+<div class="signature-row">
+<div><div class="signature">Principal / Head of School</div></div>
+<div><div class="signature">School Seal</div></div>
+</div>
+<p class="notice callout"><b>Note:</b> This certificate is a template. The school should approve and sign it according to its own submission format.</p>
+</section>
+
+<section class="page">
+<h2>Student Declaration</h2>
+<p>I declare that this project report titled <b>“MCQ-Based Examination Software”</b> has been prepared by me with guidance from my Computer Science teacher. I have made reasonable efforts to understand the program, its logic, file handling, and output. Any reference material used has been acknowledged in the bibliography.</p>
+<p>I understand that copying another person's work and presenting it as my own is not acceptable. I will be able to explain the code and demonstrate the project during evaluation.</p>
+<div class="signature-row">
+<div><div class="signature">Student Signature</div><p>Name: <span class="blank"></span></p></div>
+<div><div class="signature">Date and Place</div><p>Date: <span class="blank"></span></p><p>Place: <span class="blank"></span></p></div>
+</div>
+<h2 style="margin-top:65px">Acknowledgement</h2>
+<p>I express my sincere gratitude to my Computer Science teacher for guidance and feedback throughout this project. I thank my school for providing the opportunity and resources to practise Python programming. I also acknowledge the CBSE Computer Science curriculum, the official Python documentation, and the educational references listed in the bibliography.</p>
+<p>This project helped me connect programming concepts with a practical problem: conducting a short multiple-choice test and recording the learner's score.</p>
+<div class="page-no">Student Declaration and Acknowledgement</div>
+</section>
+
+<section class="page">
+<h2>Abstract</h2>
+<p>The MCQ-Based Examination Software is a small Python application that conducts a multiple-choice quiz in the console. It displays questions and four options, accepts a user's choice, checks the answer, calculates the score, gives feedback, and stores the result in a CSV file. It uses a fixed sample question bank so the program can be run without installing third-party libraries.</p>
+<p>The project demonstrates problem decomposition, functions, lists, dictionaries, conditional statements, loops, input validation, exception handling, and CSV file handling. A list is also used as a simple stack to track the order of questions attempted. A supplementary section demonstrates how SQL could be used in a future database-enabled version.</p>
+<div class="callout"><b>Project type:</b> Console-based educational quiz application<br><b>Language:</b> Python 3<br><b>Data storage:</b> CSV file using Python's built-in <code>csv</code> module<br><b>Target users:</b> Students and teachers conducting practice quizzes</div>
+<h2>Table of Contents</h2>
+<ol class="toc">
+<li>Introduction and problem statement</li>
+<li>Aim, objectives, scope and limitations</li>
+<li>CBSE curriculum concept mapping</li>
+<li>Hardware and software requirements</li>
+<li>System design, algorithm and flowchart</li>
+<li>Source code and explanation</li>
+<li>Sample output and test cases</li>
+<li>CSV data file and sample result</li>
+<li>Database / SQL extension (optional)</li>
+<li>Conclusion and future scope</li>
+<li>Viva-voce questions with suggested answers</li>
+<li>Bibliography</li>
+</ol>
+<p class="notice">Page breaks may vary depending on the browser and printer. Use Print / Save as PDF to preview before printing.</p>
+</section>
+
+<section class="page">
+<h2>1. Introduction</h2>
+<p>Multiple-choice questions (MCQs) are commonly used for practice and revision because they can cover many topics in a short time. Checking answers manually can take time, especially when the same quiz is attempted repeatedly. A small quiz program can automate answer checking and score calculation.</p>
+<h3>1.1 Problem Statement</h3>
+<p>To develop a simple and reliable application that presents a set of MCQs, accepts answers, calculates a score, shows the result, and saves the attempt to a file for later reference.</p>
+<h3>1.2 Aim</h3>
+<p>To apply Class XI and XII Python concepts to create a useful quiz application using functions, selection, iteration, data structures, exception handling, and file handling.</p>
+<h3>1.3 Objectives</h3>
+<ul>
+<li>Display a question with four answer options.</li>
+<li>Accept only valid choices A, B, C, or D.</li>
+<li>Compare the selected option with the answer key.</li>
+<li>Calculate correct answers, incorrect answers, and percentage.</li>
+<li>Provide simple feedback after each question.</li>
+<li>Save the student's name, score, total questions, percentage, and date/time to a CSV file.</li>
+<li>Handle invalid input and file errors without abruptly terminating the program.</li>
+</ul>
+<h3>1.4 Scope</h3>
+<p>This is a local, single-user learning prototype. It contains sample Computer Science questions and stores results on the computer where it runs. It does not require internet access, user accounts, or paid software.</p>
+<h3>1.5 Limitations</h3>
+<ul>
+<li>The sample question bank is stored inside the Python program; adding questions requires editing the code.</li>
+<li>The CSV result file is local and is not a secure multi-user database.</li>
+<li>The program is not designed for high-stakes examinations, proctoring, or simultaneous online users.</li>
+<li>Saved CSV records should be handled responsibly and should not contain unnecessary personal information.</li>
+</ul>
+</section>
+
+<section class="page">
+<h2>2. CBSE Curriculum Concept Mapping</h2>
+<p>The official CBSE Class XII Computer Science (083) curriculum for 2026–27 identifies Python functions, exception handling, text/binary/CSV file handling, stacks, computer networks, database concepts, SQL, and Python–SQL connectivity among the course areas. The curriculum asks for a project using concepts learned in Classes XI and XII, with Python file handling and/or Python–SQL connectivity highlighted in the project guidance. This project uses CSV file handling directly; SQL is presented as a clearly labelled optional extension, not as an implemented feature of the core program.</p>
+<table>
+<thead><tr><th>Curriculum concept</th><th>Where used in this project</th></tr></thead>
+<tbody>
+<tr><td>Problem-solving and decomposition</td><td>Separate functions for displaying questions, checking answers, calculating percentage, and saving results.</td></tr>
+<tr><td>Functions, parameters and return values</td><td><code>get_valid_choice()</code>, <code>run_quiz()</code>, <code>calculate_percentage()</code>, <code>save_result()</code>.</td></tr>
+<tr><td>Lists and dictionaries</td><td>Question bank is a list of dictionaries; each dictionary stores a question, options, and answer.</td></tr>
+<tr><td>Selection and iteration</td><td><code>if/else</code> checks answers; <code>for</code> loops display options and process questions.</td></tr>
+<tr><td>Exception handling</td><td><code>try/except</code> handles file errors and invalid operations.</td></tr>
+<tr><td>CSV file handling</td><td><code>csv.DictWriter</code> appends each quiz result to <code>quiz_results.csv</code>.</td></tr>
+<tr><td>Stack using list</td><td><code>attempt_stack</code> records question numbers in the order attempted; its last item represents the latest question.</td></tr>
+<tr><td>Database / SQL concepts</td><td>Optional schema and sample SQL queries are included later for future development; the core code does not connect to MySQL.</td></tr>
+<tr><td>Testing and debugging</td><td>Test cases cover valid answers, invalid input, score calculation, and file creation.</td></tr>
+</tbody>
+</table>
+<div class="callout"><b>Important:</b> This report is a suggested project format, not an official CBSE-prescribed report layout or guarantee of marks. Follow your school's instructions and ensure the student can explain and demonstrate the submitted work.</div>
+</section>
+
+<section class="page">
+<h2>3. Requirements and Feasibility</h2>
+<h3>3.1 Hardware Requirements</h3>
+<ul><li>Desktop computer or laptop.</li><li>Keyboard and monitor.</li><li>Basic storage space for the Python file and CSV result file.</li></ul>
+<h3>3.2 Software Requirements</h3>
+<ul><li>Python 3.x installed on Windows, Linux, or macOS.</li><li>A text editor or Python IDE, such as IDLE or another school-approved editor.</li><li>No third-party Python packages are required for the core program.</li></ul>
+<h3>3.3 Functional Requirements</h3>
+<table><tr><th>ID</th><th>Requirement</th><th>Expected behaviour</th></tr>
+<tr><td>FR-01</td><td>Student name input</td><td>Accept and clean the name entered by the user.</td></tr>
+<tr><td>FR-02</td><td>Display questions</td><td>Show each question and four options.</td></tr>
+<tr><td>FR-03</td><td>Validate response</td><td>Accept A/B/C/D only, regardless of letter case.</td></tr>
+<tr><td>FR-04</td><td>Evaluate answer</td><td>Increase the correct-answer count for a correct option.</td></tr>
+<tr><td>FR-05</td><td>Calculate result</td><td>Display score and percentage.</td></tr>
+<tr><td>FR-06</td><td>Store result</td><td>Append the attempt to a CSV file.</td></tr>
+<tr><td>FR-07</td><td>Handle errors</td><td>Show a helpful message if result storage fails.</td></tr></table>
+<h3>3.4 Feasibility</h3>
+<p><b>Technical:</b> The project uses standard Python features suitable for a beginner. <b>Economic:</b> Python and the built-in modules used are free. <b>Operational:</b> A student can run the program from a school computer without an internet connection.</p>
+<h3>3.5 Data Privacy and Ethics</h3>
+<p>Use test names or first names only for demonstrations. Do not store passwords, sensitive student details, or private marks in a public repository. If publishing the code on StudyTime4U.org, publish sample data only and keep real student records private. The software is for practice and should not be used as a secure examination platform.</p>
+</section>
+
+<section class="page">
+<h2>4. System Design</h2>
+<h3>4.1 Input, Process and Output</h3>
+<table><tr><th>Input</th><th>Process</th><th>Output</th></tr>
+<tr><td>Student name; option A/B/C/D for each question</td><td>Validate input, compare answer, count score, compute percentage, write CSV row</td><td>Per-question feedback, final score, percentage, saved result message</td></tr></table>
+<h3>4.2 Algorithm</h3>
+<ol>
+<li>Start the program.</li>
+<li>Display the project title and ask for the student's name.</li>
+<li>Set the correct-answer counter to zero and create an empty attempt stack.</li>
+<li>For each question in the question bank, display the question and options.</li>
+<li>Accept a response until A, B, C, or D is entered.</li>
+<li>Push the question number onto the attempt stack.</li>
+<li>Compare the response with the answer key. If it matches, increase the score.</li>
+<li>After all questions, calculate percentage = correct answers ÷ total questions × 100.</li>
+<li>Display the final score and percentage.</li>
+<li>Append the result and timestamp to the CSV file; report any file error.</li>
+<li>End the program.</li>
+</ol>
+<h3>4.3 Flowchart</h3>
+<div class="diagram">
+<div class="node">START</div><div>↓</div>
+<div class="node">Enter student name</div><div>↓</div>
+<div class="node">Load question bank</div><div>↓</div>
+<div class="node">Display question and options</div><div>↓</div>
+<div class="node">Validate A/B/C/D response</div><div>↓</div>
+<div class="node">Check answer and update score</div><div>↓</div>
+<div class="node">More questions?</div><div>↓ Yes → Repeat question steps</div>
+<div class="node">Calculate percentage</div><div>↓</div>
+<div class="node">Save result to CSV</div><div>↓</div>
+<div class="node">Display result → STOP</div>
+</div>
+<h3>4.4 Data Structure</h3>
+<p>Each question is represented as a dictionary containing a question string, a list of four options, and the correct option letter. A list holds all question dictionaries. A second list acts as a stack by appending question numbers as they are attempted.</p>
+</section>
+
+<section class="page">
+<h2>5. Python Source Code</h2>
+<p><b>File name:</b> <code>mcq_exam.py</code></p>
+<p>Type or copy the following code into a Python editor and save it as <code>mcq_exam.py</code>. Run it using Python 3. The code creates <code>quiz_results.csv</code> in the current working folder after the first completed quiz.</p>
+<pre><code>"""
+Project: MCQ-Based Examination Software
+Class XII Computer Science (083)
+Python 3 - uses built-in modules only.
+"""
+
+import csv
+import os
+from datetime import datetime
+
+QUESTIONS = [
+    {
+        "question": "Which Python keyword is used to define a function?",
+        "options": ["A. func", "B. define", "C. def", "D. function"],
+        "answer": "C"
+    },
+    {
+        "question": "Which file mode appends data to a text file?",
+        "options": ["A. r", "B. a", "C. x", "D. t"],
+        "answer": "B"
+    },
+    {
+        "question": "Which Python data structure follows LIFO?",
+        "options": ["A. Queue", "B. Stack", "C. String", "D. Tuple"],
+        "answer": "B"
+    },
+    {
+        "question": "Which CSV module object is commonly used to read rows?",
+        "options": ["A. csv.reader", "B. csv.open", "C. csv.scan", "D. csv.input"],
+        "answer": "A"
+    },
+    {
+        "question": "Which SQL command retrieves data from a table?",
+        "options": ["A. UPDATE", "B. DELETE", "C. SELECT", "D. ALTER"],
+        "answer": "C"
+    },
+    {
+        "question": "Which protocol is used for secure web communication?",
+        "options": ["A. HTTP", "B. FTP", "C. HTTPS", "D. SMTP"],
+        "answer": "C"
+    },
+    {
+        "question": "Which clause filters rows before grouping in SQL?",
+        "options": ["A. WHERE", "B. ORDER BY", "C. AS", "D. DISTINCT"],
+        "answer": "A"
+    },
+    {
+        "question": "Which block is used to handle a possible Python exception?",
+        "options": ["A. check", "B. try-except", "C. repeat", "D. switch"],
+        "answer": "B"
+    },
+    {
+        "question": "What does a primary key identify in a relational table?",
+        "options": ["A. Duplicate rows", "B. Each row uniquely",
+                    "C. Only text", "D. A file path"],
+        "answer": "B"
+    },
+    {
+        "question": "Which function converts a string to lowercase?",
+        "options": ["A. lower()", "B. small()", "C. lowercase()", "D. case()"],
+        "answer": "A"
+    }
+]
+
+RESULT_FILE = "quiz_results.csv"
+
+
+def get_valid_choice():
+    """Return a valid answer choice: A, B, C or D."""
+    while True:
+        choice = input("Your answer (A/B/C/D): ").strip().upper()
+        if choice in ("A", "B", "C", "D"):
+            return choice
+        print("Invalid choice. Please enter A, B, C or D.")
+
+
+def calculate_percentage(score, total):
+    """Return score percentage, protecting against division by zero."""
+    if total == 0:
+        return 0.0
+    return (score / total) * 100
+
+
+def save_result(name, score, total, percentage):
+    """Append one result row to a CSV file."""
+    file_exists = os.path.exists(RESULT_FILE)
+    try:
+        with open(RESULT_FILE, "a", newline="", encoding="utf-8") as file:
+            fields = ["date_time", "student_name", "score",
+                      "total_questions", "percentage"]
+            writer = csv.DictWriter(file, fieldnames=fields)
+            if not file_exists or os.path.getsize(RESULT_FILE) == 0:
+                writer.writeheader()
+            writer.writerow({
+                "date_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "student_name": name,
+                "score": score,
+                "total_questions": total,
+                "percentage": f"{percentage:.2f}"
+            })
+        print("Result saved in", RESULT_FILE)
+    except OSError as error:
+        print("Could not save the result:", error)
+
+
+def run_quiz():
+    """Conduct the quiz and display the final result."""
+    print("=" * 48)
+    print("       STUDYTIME4U - MCQ EXAM SOFTWARE")
+    print("=" * 48)
+
+    name = input("Enter your name: ").strip()
+    if not name:
+        name = "Guest"
+
+    score = 0
+    attempt_stack = []  # List used as a stack: latest question is last.
+
+    for number, item in enumerate(QUESTIONS, start=1):
+        print("\nQuestion", number, "of", len(QUESTIONS))
+        print(item["question"])
+        for option in item["options"]:
+            print(" ", option)
+
+        choice = get_valid_choice()
+        attempt_stack.append(number)  # PUSH operation
+
+        if choice == item["answer"]:
+            print("Correct answer!")
+            score += 1
+        else:
+            print("Incorrect. Correct option:", item["answer"])
+
+    total = len(QUESTIONS)
+    percentage = calculate_percentage(score, total)
+
+    print("\n" + "=" * 48)
+    print("RESULT FOR:", name)
+    print("Score:", score, "/", total)
+    print("Percentage: {:.2f}%".format(percentage))
+    print("Questions attempted:", len(attempt_stack))
+    print("Latest attempted question (stack top):", attempt_stack[-1])
+    print("=" * 48)
+
+    save_result(name, score, total, percentage)
+
+
+if __name__ == "__main__":
+    try:
+        run_quiz()
+    except (KeyboardInterrupt, EOFError):
+        print("\nQuiz ended before completion. No final result was saved.")
+</code></pre>
+<p class="notice"><b>Student task:</b> Run the code, understand each function, and make at least one improvement yourself (for example, add questions, a pass/fail message, or a review of incorrect answers). Do not submit code you cannot explain.</p>
+</section>
+
+<section class="page">
+<h2>6. Explanation of the Program</h2>
+<table>
+<tr><th>Program part</th><th>Purpose</th><th>Concept</th></tr>
+<tr><td><code>QUESTIONS</code></td><td>Stores the question bank, options, and answer keys.</td><td>List, dictionary, strings</td></tr>
+<tr><td><code>get_valid_choice()</code></td><td>Repeats input until the user enters a valid option.</td><td>User-defined function, while loop, conditional</td></tr>
+<tr><td><code>calculate_percentage()</code></td><td>Computes percentage and avoids division by zero.</td><td>Parameters, return value, arithmetic</td></tr>
+<tr><td><code>save_result()</code></td><td>Appends result data and a heading to the CSV file when needed.</td><td>CSV, file handling, exception handling</td></tr>
+<tr><td><code>run_quiz()</code></td><td>Runs the question loop, evaluates answers, and displays the result.</td><td>Iteration, selection, list traversal</td></tr>
+<tr><td><code>attempt_stack.append()</code></td><td>Adds the current question number to the top of the stack.</td><td>Stack PUSH operation using a list</td></tr>
+<tr><td><code>if __name__ == "__main__"</code></td><td>Starts the quiz when this file is run directly.</td><td>Program structure / execution control</td></tr>
+</table>
+<h3>6.1 Why use a CSV file?</h3>
+<p>CSV stands for Comma-Separated Values. It stores tabular data in a plain-text format that can be opened by a text editor or spreadsheet program. The Python <code>csv</code> module handles quoting and separators more reliably than manually joining strings.</p>
+<h3>6.2 Why use exception handling?</h3>
+<p>The result file may not be writable if the folder is read-only or storage is unavailable. The <code>try/except</code> block displays a useful error message instead of hiding the reason for the failure. The outer exception handler handles a user who interrupts the quiz.</p>
+<h3>6.3 Why use a stack?</h3>
+<p>A stack follows Last In, First Out (LIFO). The program appends each attempted question number to a list. The last number in the list represents the most recently attempted question. This demonstrates stack-style insertion; the core program does not use a POP operation because it does not need to remove questions.</p>
+<h3>6.4 Accuracy note</h3>
+<p>The current program shows the correct option after an incorrect response. It saves only the final total score, not each individual response. The CSV file is a record of attempts, not a secure database.</p>
+</section>
+
+<section class="page">
+<h2>7. Sample Output</h2>
+<p>The output below is an illustrative sample. Your actual output will depend on the answers entered.</p>
+<pre>================================================
+       STUDYTIME4U - MCQ EXAM SOFTWARE
+================================================
+Enter your name: Ananya
+
+Question 1 of 10
+Which Python keyword is used to define a function?
+  A. func
+  B. define
+  C. def
+  D. function
+Your answer (A/B/C/D): C
+Correct answer!
+
+Question 2 of 10
+Which file mode appends data to a text file?
+  A. r
+  B. a
+  C. x
+  D. t
+Your answer (A/B/C/D): B
+Correct answer!
+
+... (questions 3 to 10 are displayed in the same way) ...
+
+================================================
+RESULT FOR: Ananya
+Score: 8 / 10
+Percentage: 80.00%
+Questions attempted: 10
+Latest attempted question (stack top): 10
+================================================
+Result saved in quiz_results.csv</pre>
+<h3>7.1 Sample CSV result</h3>
+<pre>date_time,student_name,score,total_questions,percentage
+2026-10-21 10:30:00,Ananya,8,10,80.00</pre>
+<p class="notice">The timestamp and score above are examples for report presentation, not a record from a real student's attempt.</p>
+<h3>7.2 How to run the program</h3>
+<ol>
+<li>Install Python 3 if it is not already installed.</li>
+<li>Save the source code as <code>mcq_exam.py</code>.</li>
+<li>Open IDLE or a terminal in the folder where the file is saved.</li>
+<li>Run the file. In a terminal, use <code>python mcq_exam.py</code> or the command configured for your system.</li>
+<li>Enter a name and answer each question with A, B, C, or D.</li>
+<li>After completion, check the output and the generated <code>quiz_results.csv</code> file.</li>
+</ol>
+</section>
+
+<section class="page">
+<h2>8. Testing and Validation</h2>
+<p>Testing checks whether the application behaves as expected under normal and invalid conditions. Execute these tests and record the actual result on your computer before final submission.</p>
+<table>
+<tr><th>Test ID</th><th>Test input / situation</th><th>Expected result</th><th>Actual result</th></tr>
+<tr><td>T01</td><td>Enter a valid name and correct answers.</td><td>Score increases for each correct answer.</td><td>________________</td></tr>
+<tr><td>T02</td><td>Enter an incorrect but valid option.</td><td>Score does not increase; correct option is shown.</td><td>________________</td></tr>
+<tr><td>T03</td><td>Enter X at an answer prompt.</td><td>Program asks for A/B/C/D again.</td><td>________________</td></tr>
+<tr><td>T04</td><td>Enter a blank name.</td><td>Program uses “Guest”.</td><td>________________</td></tr>
+<tr><td>T05</td><td>Complete all questions.</td><td>Final score, percentage, and number attempted are displayed.</td><td>________________</td></tr>
+<tr><td>T06</td><td>Complete a second attempt.</td><td>A new row is appended to the same CSV file.</td><td>________________</td></tr>
+<tr><td>T07</td><td>Make result folder/file unwritable (only if safe to test).</td><td>A file error message is displayed.</td><td>________________</td></tr>
+<tr><td>T08</td><td>Press Ctrl+C while answering (optional test).</td><td>Quiz ends with a message and does not save a final result.</td><td>________________</td></tr>
+</table>
+<h3>8.1 Error handling</h3>
+<ul>
+<li>Invalid option: handled by the validation loop.</li>
+<li>Empty name: handled by assigning the default name “Guest”.</li>
+<li>File write problem: handled by an <code>OSError</code> exception.</li>
+<li>Keyboard interruption or end-of-input: handled at the program entry point.</li>
+</ul>
+<h3>8.2 Evaluation summary</h3>
+<p>After testing, write a brief statement describing which test cases passed, any errors encountered, and how they were corrected.</p>
+<p><b>Student's actual testing notes:</b></p>
+<p>________________________________________________________________________</p>
+<p>________________________________________________________________________</p>
+<p>________________________________________________________________________</p>
+</section>
+
+<section class="page">
+<h2>9. Optional Database / SQL Extension</h2>
+<p>This section demonstrates how the project could be expanded using database concepts from the Class XII syllabus. The main Python code above uses CSV and does <b>not</b> connect to MySQL. If your teacher requires Python–SQL connectivity for this project, implement and test the extension separately with the school's approved MySQL setup and connector before claiming that it is complete.</p>
+<h3>9.1 Suggested relational design</h3>
+<p><b>Table: STUDENT</b></p>
+<table><tr><th>Column</th><th>Example type</th><th>Purpose</th></tr>
+<tr><td>student_id</td><td>INT PRIMARY KEY</td><td>Unique identifier</td></tr>
+<tr><td>student_name</td><td>VARCHAR(60) NOT NULL</td><td>Student's name</td></tr></table>
+<p><b>Table: QUIZ_RESULT</b></p>
+<table><tr><th>Column</th><th>Example type</th><th>Purpose</th></tr>
+<tr><td>result_id</td><td>INT PRIMARY KEY</td><td>Unique result record</td></tr>
+<tr><td>student_id</td><td>INT</td><td>Reference to STUDENT.student_id</td></tr>
+<tr><td>score</td><td>INT</td><td>Number correct</td></tr>
+<tr><td>total_questions</td><td>INT</td><td>Total questions</td></tr>
+<tr><td>attempt_date</td><td>DATE</td><td>Date of attempt</td></tr></table>
+<h3>9.2 Example SQL statements (for MySQL)</h3>
+<pre>CREATE DATABASE studytime_quiz;
+USE studytime_quiz;
+
+CREATE TABLE STUDENT (
+    student_id INT PRIMARY KEY,
+    student_name VARCHAR(60) NOT NULL
+);
+
+CREATE TABLE QUIZ_RESULT (
+    result_id INT PRIMARY KEY,
+    student_id INT,
+    score INT,
+    total_questions INT,
+    attempt_date DATE,
+    FOREIGN KEY (student_id) REFERENCES STUDENT(student_id)
+);
+
+INSERT INTO STUDENT VALUES (1, 'Ananya');
+INSERT INTO QUIZ_RESULT VALUES (101, 1, 8, 10, '2026-10-21');
+
+SELECT student_name
+FROM STUDENT
+WHERE student_id = 1;
+
+SELECT student_id, score, total_questions
+FROM QUIZ_RESULT
+ORDER BY score DESC;
+
+SELECT student_id, AVG(score) AS average_score
+FROM QUIZ_RESULT
+GROUP BY student_id;</pre>
+<h3>9.3 Python–SQL connectivity concept</h3>
+<p>A database-enabled version would connect to MySQL, create a cursor, execute parameterised SQL queries, commit changes, and fetch results. Database credentials must never be placed in a public GitHub repository or a public website. Use your teacher's approved configuration and a local test database.</p>
+<p class="notice">This appendix is for learning and future development. Do not state that the SQL extension is implemented unless you have actually connected, run the queries, and captured your own outputs.</p>
+</section>
+
+<section class="page">
+<h2>10. Conclusion and Future Scope</h2>
+<h3>10.1 Conclusion</h3>
+<p>The MCQ-Based Examination Software demonstrates how Python can solve a simple educational problem. It displays questions, validates responses, checks answers, calculates a score, and saves the result in a CSV file. The project brings together functions, dictionaries, lists, loops, conditional statements, exception handling, and file handling in one small application.</p>
+<p>During development and testing, the student should gain practice in decomposing a problem, designing an algorithm, writing readable code, validating input, handling file errors, and documenting the program.</p>
+<h3>10.2 Future Enhancements</h3>
+<ul>
+<li>Load questions from a separate CSV file instead of hard-coding them.</li>
+<li>Allow a teacher to select a subject or topic.</li>
+<li>Randomise question order using Python's <code>random</code> module.</li>
+<li>Store each answer and generate a topic-wise performance report.</li>
+<li>Add a graphical interface after learning an appropriate GUI library.</li>
+<li>Add a tested MySQL database with Python–SQL connectivity.</li>
+<li>Create a web version with secure authentication and server-side result storage; a static GitHub Pages site alone should not be used to store private student results.</li>
+<li>Add accessibility improvements such as keyboard-only navigation and readable contrast.</li>
+</ul>
+<h2>11. Bibliography</h2>
+<ol>
+<li>Central Board of Secondary Education (CBSE), <i>Computer Science (083), Class XII Curriculum 2026–27</i>. Official curriculum PDF: <a href="https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Computer_Science_SecP2_2026-27.pdf">https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Computer_Science_SecP2_2026-27.pdf</a></li>
+<li>Python Software Foundation, <i>Python 3 Documentation</i>: <a href="https://docs.python.org/3/">https://docs.python.org/3/</a></li>
+<li>Python Software Foundation, <i>csv — CSV File Reading and Writing</i>: <a href="https://docs.python.org/3/library/csv.html">https://docs.python.org/3/library/csv.html</a></li>
+<li>Python Software Foundation, <i>Built-in Exceptions</i>: <a href="https://docs.python.org/3/library/exceptions.html">https://docs.python.org/3/library/exceptions.html</a></li>
+<li>MySQL Documentation, <i>MySQL Reference Manual</i> (for optional SQL extension): <a href="https://dev.mysql.com/doc/">https://dev.mysql.com/doc/</a></li>
+</ol>
+<p><b>Accessed on:</b> <span class="blank"></span> (enter the date on which you consulted the resources).</p>
+</section>
+
+<section class="page">
+<h2>12. Viva-Voce Questions and Suggested Answers</h2>
+<p>Practise explaining these in your own words. Your teacher may ask additional questions based on your actual implementation.</p>
+<ol>
+<li><b>What is the purpose of this project?</b><br>It conducts a short MCQ quiz, checks answers, calculates a score, and saves the result to a CSV file.</li>
+<li><b>What is a function?</b><br>A named, reusable block of code that performs a task. Functions can accept parameters and return values.</li>
+<li><b>Why is the question bank a list of dictionaries?</b><br>The list stores multiple questions; each dictionary groups a question, its options, and its answer under meaningful keys.</li>
+<li><b>What is CSV?</b><br>Comma-Separated Values, a plain-text format for tabular data.</li>
+<li><b>Why use the csv module?</b><br>It provides functions for reading and writing CSV data without manually handling separators and quoted values.</li>
+<li><b>What is exception handling?</b><br>A way to respond to runtime errors using constructs such as try and except.</li>
+<li><b>What is a stack?</b><br>A linear data structure that follows Last In, First Out (LIFO).</li>
+<li><b>Which operation adds an item to the stack?</b><br>PUSH; in this program, list.append() adds a question number.</li>
+<li><b>What does the percentage function calculate?</b><br>It divides the correct score by the total number of questions and multiplies by 100.</li>
+<li><b>What happens if the user enters X instead of A/B/C/D?</b><br>The validation loop asks the user to enter a valid option again.</li>
+<li><b>Why is a timestamp saved?</b><br>To distinguish quiz attempts and record when each result was saved.</li>
+<li><b>What is a primary key?</b><br>A column or combination of columns that uniquely identifies a row in a relational table.</li>
+<li><b>What does SQL SELECT do?</b><br>It retrieves data from one or more database tables.</li>
+<li><b>Does the main program connect to MySQL?</b><br>No. The main version stores results in a CSV file. The SQL section is a proposed extension and must be implemented separately to claim database connectivity.</li>
+<li><b>How could the project be improved?</b><br>Questions could be loaded from a CSV file, a timer and topic selection could be added, and results could be stored in a properly configured database.</li>
+<li><b>What did you learn from this project?</b><br>Explain honestly the programming, debugging, file handling, testing, and documentation work you personally completed.</li>
+</ol>
+<h2>Final Submission Checklist</h2>
+<ul>
+<li>☐ Replace all placeholders with correct student, school, teacher, and session details.</li>
+<li>☐ Run the code yourself and verify that it works on the school computer.</li>
+<li>☐ Complete the test table using actual test results.</li>
+<li>☐ Add your own screenshots or printouts of the actual program output if requested by your teacher.</li>
+<li>☐ Ensure the source code in the report matches the version you demonstrate.</li>
+<li>☐ Remove any section that you have not implemented if it could be mistaken for completed functionality.</li>
+<li>☐ Review the report with your teacher and follow the school's binding, signature, and page-format instructions.</li>
+</ul>
+<div class="callout"><b>StudyTime4U</b><br>Educational resource template · Class XII Computer Science (083) · Academic Session 2026–2027<br><a href="https://studytime4u.org">https://studytime4u.org</a></div>
+<p class="center"><b>— End of Project Report —</b></p>
+</section>
+
+</div>
+</body>
+</html>
